@@ -34,3 +34,6 @@ SpringWeb/target/m2e-wtp/web-resources/META-INF/maven/formation/SpringWeb/pom.pr
 *.properties
 SpringWeb/.classpath
 *.MF
+*.MF
+*.properties
+*.container
