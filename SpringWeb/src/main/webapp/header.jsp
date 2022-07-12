@@ -7,23 +7,16 @@
       <ul class="nav justify-content-around">
         <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
         <li class="nav-item"> <a class="nav-link" href="Menu">Menu</a> </li>
-        <% 
-       	Client c = (Client)session.getAttribute("client");
-       	Admin a = (Admin)session.getAttribute("admin");
-       	if (c == null){
-       		out.print("<li class='nav-item'> <a class='nav-link' href='Connexion.jsp'>Connexion/Inscription</a> </li>");
-       		if ( a == null)
-       			out.print("<li class='nav-item'> <a class='nav-link' href='LoginAdmin.jsp'>Admin</a> </li>");
-       		else{
-       			out.print("<li class='nav-item'> <a class='nav-link' href='ServletConnexionAdmin'>Gestion articles</a> </li>");
-       			out.print("<li class='nav-item'> <a class='nav-link' href='Logout'>Deconnection Admin</a> </li>");       				
-       		}       			
-       	} else {
-       		out.print("<li class='nav-item'> <a class='nav-link' href='ServletAccesCommande'>Commande</a> </li>");
-       		out.print("<li class='nav-item'> <a class='nav-link' href='ServletDeconnexion'>Deconnection</a> </li>");
-       	}
-       
-       	%>
+        <c:choose>
+            <c:when test="${client == null}">
+                <li class='nav-item'> <a class='nav-link' href='/connexion'>Connexion/Inscription</a> </li>
+				<!--admin-->
+            </c:when>
+            <c:otherwise>
+                <li class='nav-item'> <a class='nav-link' href='ServletAccesCommande'>Commande</a> </li>
+                <li class='nav-item'> <a class='nav-link' href='ServletDeconnexion'>Deconnexion</a> </li>
+            </c:otherwise>
+        </c:choose>
       </ul>
 </nav>
 </header>

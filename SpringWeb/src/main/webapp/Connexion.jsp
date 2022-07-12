@@ -17,7 +17,7 @@
   <section class="d-flex flex-column align-items-center">
 	<div class="w-75 d-flex flex-column align-items-center">
 	 	<h3>Déjà client ? Connectez-vous:</h3>
-		<form action = "ServletConnexion">
+		<form action="/clients/connexion">
 			<label for="identifiant">Identifiant</label>
 			<input name = "identifiant" type = "number" placeholder="00000000" required/><br><br>
 		

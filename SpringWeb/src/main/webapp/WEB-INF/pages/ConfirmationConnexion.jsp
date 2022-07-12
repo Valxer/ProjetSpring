@@ -10,12 +10,9 @@
 </head>
 <body>
 	<%@ include file="/header.jsp" %>
+	
+	<h1 class='text-center'>Bienvenue ${client.prenom}</h1>
   
-	<%
-	
-	out.print("<h1 class='text-center'>Bienvenue " + c.getPrenom() + "</h1>");
-	
-	%>
 	
 	<%@ include file="/footer.jsp" %>
 	
