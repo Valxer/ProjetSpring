@@ -25,3 +25,7 @@ replay_pid*
 SpringBack/.classpath
 SpringBack/target/classes/META-INF/MANIFEST.MF
 SpringBack/target/classes/META-INF/maven/formation/SpringBack/pom.properties
+SpringWeb/.classpath
+SpringWeb/.project
+*.MF
+SpringWeb/target/m2e-wtp/web-resources/META-INF/maven/formation/SpringWeb/pom.properties
