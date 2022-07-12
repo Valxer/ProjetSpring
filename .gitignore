@@ -29,3 +29,8 @@ SpringWeb/.classpath
 SpringWeb/.project
 *.MF
 SpringWeb/target/m2e-wtp/web-resources/META-INF/maven/formation/SpringWeb/pom.properties
+*.snap
+*.snap
+*.properties
+SpringWeb/.classpath
+*.MF
