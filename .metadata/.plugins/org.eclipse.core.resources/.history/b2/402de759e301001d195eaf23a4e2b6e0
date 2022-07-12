@@ -1,0 +1,11 @@
+package repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.mysql.fabric.xmlrpc.Client;
+
+import model.Article;
+
+public interface ClientRepository extends JpaRepository<Client, Integer> {
+
+}

@@ -1,0 +1,9 @@
+package repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import model.Admin;
+
+public interface ArticleRepository extends JpaRepository<Admin, Integer> {
+
+}
