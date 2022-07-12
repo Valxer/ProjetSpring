@@ -1,0 +1,63 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Version;
+
+@Entity
+public class Admin {
+	@Id
+	private int identifiant;
+	private String motDePasse;
+	private boolean actif;
+	@Version
+	private int version;
+
+	public Admin() {
+
+	}
+
+	public Admin(int identifiant, String motDePasse, boolean actif) {
+		this.identifiant = identifiant;
+		this.motDePasse = motDePasse;
+		this.actif = actif;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public int getIdentifiant() {
+		return identifiant;
+	}
+
+	public void setIdentifiant(int identifiant) {
+		this.identifiant = identifiant;
+	}
+
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+
+	public boolean isActif() {
+		return actif;
+	}
+
+	public void setActif(boolean actif) {
+		this.actif = actif;
+	}
+
+	@Override
+	public String toString() {
+		return "Admin [identifiant=" + identifiant + ", motDePasse=" + motDePasse + ", actif=" + actif + "]";
+	}
+
+}

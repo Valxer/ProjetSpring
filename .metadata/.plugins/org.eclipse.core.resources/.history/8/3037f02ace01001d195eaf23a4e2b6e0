@@ -1,0 +1,15 @@
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import repository.AdminRepository;
+import service.AdminService;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("./applicationContext.xml");
+		AdminRepository serv = ctx.getBean(AdminService.class).getRepo();
+		serv.findAll();
+		ctx.close();
+	}
+
+}
