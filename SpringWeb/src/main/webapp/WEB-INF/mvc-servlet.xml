@@ -13,9 +13,11 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
+	<context:annotation-config/>
 	<mvc:annotation-driven validator="validator"></mvc:annotation-driven>
 
-	<context:component-scan base-package="controller"></context:component-scan>
+	<context:component-scan base-package="controller, listener"></context:component-scan>
+	<bean id="contextStartedEventListener" class="listener.ContextStartedEventListener"/>
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

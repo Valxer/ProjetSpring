@@ -13,11 +13,16 @@ import model.Client;
 import repository.ClientRepository;
 
 @Controller
-@RequestMapping("/clients")
-public class ClientController {
+@RequestMapping("/menu")
+public class MenuController {
 
 	@Autowired
 	private ClientRepository clientRpository;
+
+	@RequestMapping("menu")
+	public String menu() {
+		return "Menu";
+	}
 
 	@RequestMapping("/connexion")
 	public String con(@RequestParam(name = "identifiant") int id, @RequestParam(name = "mdp") String mdp,
@@ -33,6 +38,24 @@ public class ClientController {
 		} else {
 			return "ErreurConnexion";
 		}
+	}
+
+	@RequestMapping("/commande")
+	public String comm(HttpSession session) {
+		if (session.getAttribute("client") == null) {
+			return "./Connexion";
+		} else {
+			return "choixarticle";
+		}
+	}
+
+	@RequestMapping("/deconnexion")
+	public String deco(HttpSession session) {
+		session.setAttribute("client", null);
+		session.setAttribute("panier", null);
+		session.setAttribute("totalp", null);
+		return "./Acceuil";
+
 	}
 
 }

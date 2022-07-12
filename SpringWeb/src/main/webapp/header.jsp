@@ -6,15 +6,15 @@
 <nav class="navbar-dark bg-primary ">
       <ul class="nav justify-content-around">
         <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
-        <li class="nav-item"> <a class="nav-link" href="Menu">Menu</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="menu/menu">Menu</a> </li>
         <c:choose>
             <c:when test="${client == null}">
-                <li class='nav-item'> <a class='nav-link' href='/connexion'>Connexion/Inscription</a> </li>
+                <li class='nav-item'> <a class='nav-link' href='menu/connexion'>Connexion/Inscription</a> </li>
 				<!--admin-->
             </c:when>
             <c:otherwise>
-                <li class='nav-item'> <a class='nav-link' href='ServletAccesCommande'>Commande</a> </li>
-                <li class='nav-item'> <a class='nav-link' href='ServletDeconnexion'>Deconnexion</a> </li>
+                <li class='nav-item'> <a class='nav-link' href='menu/commande'>Commande</a> </li>
+                <li class='nav-item'> <a class='nav-link' href='menu/deconnexion'>Deconnexion</a> </li>
             </c:otherwise>
         </c:choose>
       </ul>
