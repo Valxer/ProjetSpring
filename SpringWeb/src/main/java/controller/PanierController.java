@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import model.Achat;
 import model.Client;
 import model.Commande;
+import model.CommandeArticle;
+import model.IdCommandeArticle;
+import repository.ArticleRepository;
+import repository.CommandeArticleRepository;
 import repository.CommandeRepository;
 
 @Controller
@@ -24,6 +29,10 @@ public class PanierController {
 
 	@Autowired
 	private CommandeRepository CoRepo;
+	@Autowired
+	private CommandeArticleRepository CoArRepo;
+	@Autowired
+	private ArticleRepository ArRepo;
 
 	@GetMapping("/commande")
 	public String choixarticles(HttpSession session) {
@@ -69,7 +78,7 @@ public class PanierController {
 	}
 
 	@RequestMapping("/ordercompleted")
-	public String ordercompleted(HttpSession session) {
+	public String ordercompleted(HttpSession session, Model model) {
 		if (session.getAttribute("client") == null || session.getAttribute("panier") == null) {
 			return "redirect:/panier/commande";
 		} else {
@@ -80,8 +89,12 @@ public class PanierController {
 			this.CoRepo.save(c);
 			session.setAttribute("p", c.getId());
 			for (Achat a : panier) {
-
+				this.CoArRepo.save(new CommandeArticle(
+						new IdCommandeArticle(c, ArRepo.findById(a.getIdarticle()).get()), a.getQuantite()));
 			}
+			model.addAttribute("totalfinal", total);
+			session.setAttribute("totalp", null);
+			session.setAttribute("panier", null);
 			return "bravo";
 		}
 	}

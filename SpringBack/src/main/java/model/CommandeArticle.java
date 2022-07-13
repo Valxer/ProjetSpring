@@ -15,11 +15,10 @@ public class CommandeArticle {
 	public CommandeArticle() {
 	}
 
-	public CommandeArticle(IdCommandeArticle id, int quantite, int version) {
+	public CommandeArticle(IdCommandeArticle id, int quantite) {
 		super();
 		this.id = id;
 		this.quantite = quantite;
-		this.version = version;
 	}
 
 	public IdCommandeArticle getId() {
