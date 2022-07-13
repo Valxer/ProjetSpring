@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,9 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -22,13 +20,16 @@ public class Commande {
 	@ManyToOne
 	@JoinColumn(name = "client")
 	private Client client;
-	@ManyToMany
-	@JoinTable(name = "commande_article", joinColumns = @JoinColumn(name = "idcommande") , inverseJoinColumns = @JoinColumn(name = "idarticle") )
-	private List<Article> articles = new ArrayList<Article>();
 	private Date date;
+	@OneToMany(mappedBy = "commande")
+	private List<CommandeArticle> articles;
 	private int total;
 	@Version
 	private int version;
+
+	public Commande() {
+		super();
+	}
 
 	public Commande(Client client, Date date, int total) {
 		super();
@@ -37,16 +38,12 @@ public class Commande {
 		this.total = total;
 	}
 
-	public Commande(Client client, List<Article> articles, Date date, int total) {
-		super();
-		this.client = client;
-		this.articles = articles;
-		this.date = date;
-		this.total = total;
+	public List<CommandeArticle> getArticles() {
+		return articles;
 	}
 
-	public Commande() {
-		super();
+	public void setArticles(List<CommandeArticle> articles) {
+		this.articles = articles;
 	}
 
 	public int getId() {
@@ -63,14 +60,6 @@ public class Commande {
 
 	public void setClient(Client client) {
 		this.client = client;
-	}
-
-	public List<Article> getArticles() {
-		return articles;
-	}
-
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
 	}
 
 	public Date getDate() {
@@ -99,8 +88,7 @@ public class Commande {
 
 	@Override
 	public String toString() {
-		return "Commande [id=" + id + ", client=" + client + ", articles=" + articles + ", date=" + date + ", total="
-				+ total + "]";
+		return "Commande [id=" + id + ", client=" + client + ", date=" + date + ", total=" + total + "]";
 	}
 
 }
