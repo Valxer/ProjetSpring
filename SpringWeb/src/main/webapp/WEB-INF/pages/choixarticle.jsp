@@ -28,7 +28,7 @@
 				  </c:forEach>
 				</select>
 				<div class="col-4">
-					Quantité :<input name="quantite" type="number" value="1">				
+					Quantité :<input name="quantite" type="number" value="1" min="1">				
 				</div>
 				<button type="submit" class="btn btn-primary mt-4" value="ajouter">Ajouter</button>			
 			</form:form>
