@@ -10,9 +10,6 @@
 </head>
 <body>
 	<%@ include file="/header.jsp" %>
-  
-  <h2 class="text-center">Connexion/Inscription</h2>
-  <hr>
   <section class="d-flex ">
 	<div class="w-75 d-flex flex-column align-items-center">
 	 	<h3>Déjà client ? Connectez-vous:</h3>

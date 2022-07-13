@@ -3,8 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <header>
 <a href="../menu/accueil" class="d-flex justify-content-center"><img src="https://zupimages.net/up/22/28/783d.png" height="200"></a>
-<nav class="navbar-dark bg-black ">
-      <ul class="nav justify-content-around">
+<nav class="navbar-dark bg-black" style="height:60px;">
+      <ul class="nav justify-content-around align-items-center text-center h-100">
         <li class="nav-item"> <a class="nav-link" href="../menu/accueil"> Accueil </a></li>
         <li class="nav-item"> <a class="nav-link" href="../menu/menu"> Catalogue </a> </li>
         <c:choose>

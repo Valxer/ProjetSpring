@@ -11,7 +11,7 @@
 <body>
 	<%@ include file="/header.jsp" %>
   
-	<h2 class="text-center">Menu</h2>
+	<h2 class="text-center my-4">Catalogue</h2>
 	<section class="menu-container d-flex flex-wrap justify-content-around">
 		<c:forEach var="article" items="${articles}">
 			<div style="width: 350px; margin: 30px 15px;" class="articlecard text-center" onclick="myFunction(this)">
