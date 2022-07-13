@@ -5,8 +5,8 @@
 <a href="../menu/accueil" class="d-flex justify-content-center"><img src="https://zupimages.net/up/22/28/783d.png" height="200"></a>
 <nav class="navbar-dark bg-black ">
       <ul class="nav justify-content-around">
-        <li class="nav-item"> <a class="nav-link" href="../menu/accueil">Accueil</a></li>
-        <li class="nav-item"> <a class="nav-link" href="../menu/menu">Menu</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="../menu/accueil"> Accueil </a></li>
+        <li class="nav-item"> <a class="nav-link" href="../menu/menu"> Catalogue </a> </li>
         <c:choose>
             <c:when test="${client == null}">
                 <li class='nav-item'> <a class='nav-link' href='../menu/connexion'>Connexion/Inscription</a> </li>
