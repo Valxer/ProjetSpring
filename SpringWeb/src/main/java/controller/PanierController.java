@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import model.Achat;
+import model.Client;
+import model.Commande;
 import repository.CommandeRepository;
 
 @Controller
@@ -70,7 +73,15 @@ public class PanierController {
 		if (session.getAttribute("client") == null || session.getAttribute("panier") == null) {
 			return "redirect:/panier/commande";
 		} else {
-			/* Ajout de la commande et des articles en base */
+			Client cl = (Client) session.getAttribute("client");
+			int total = (int) session.getAttribute("totalp");
+			Commande c = new Commande(cl, new Date(), total);
+			List<Achat> panier = (List<Achat>) session.getAttribute("panier");
+			this.CoRepo.save(c);
+			session.setAttribute("p", c.getId());
+			for (Achat a : panier) {
+
+			}
 			return "bravo";
 		}
 	}

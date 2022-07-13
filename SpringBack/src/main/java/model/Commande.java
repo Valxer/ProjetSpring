@@ -3,13 +3,13 @@ package model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -21,8 +21,9 @@ public class Commande {
 	@JoinColumn(name = "client")
 	private Client client;
 	private Date date;
-	@OneToMany(mappedBy = "commande")
-	private List<CommandeArticle> articles;
+	// @OneToMany(mappedBy = "commande")
+	@ElementCollection(targetClass = IdCommandeArticle.class)
+	private List<IdCommandeArticle> articles;
 	private int total;
 	@Version
 	private int version;
@@ -38,11 +39,11 @@ public class Commande {
 		this.total = total;
 	}
 
-	public List<CommandeArticle> getArticles() {
+	public List<IdCommandeArticle> getArticles() {
 		return articles;
 	}
 
-	public void setArticles(List<CommandeArticle> articles) {
+	public void setArticles(List<IdCommandeArticle> articles) {
 		this.articles = articles;
 	}
 
