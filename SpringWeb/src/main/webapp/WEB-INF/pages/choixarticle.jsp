@@ -11,7 +11,7 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div class="container">
-	<h1 class="row justify-content-center">Faites votre repas</h1>
+	<h1 class="row justify-content-center">Préparez votre assaut</h1>
 	<h3>La commande de <c:out value="${client.nom}" /> <c:out value="${client.prenom}" />
 	<c:if test ="${totalp != null}">
 	(Montant de panier : <c:out value="${totalp}" /> &euro;)
