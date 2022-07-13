@@ -2,12 +2,11 @@ package model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -20,8 +19,9 @@ public class Article {
 	private String description;
 	private int prix;
 	private String image;
-	@OneToMany(mappedBy = "articles", cascade = CascadeType.REMOVE)
-	private List<Commande> commandes;
+	// @OneToMany(mappedBy = "article")
+	@ElementCollection(targetClass = IdCommandeArticle.class)
+	private List<IdCommandeArticle> commandes;
 	@Version
 	private int version;
 
@@ -35,11 +35,11 @@ public class Article {
 	public Article() {
 	}
 
-	public List<Commande> getCommandes() {
+	public List<IdCommandeArticle> getCommandes() {
 		return commandes;
 	}
 
-	public void setCommandes(List<Commande> commandes) {
+	public void setCommandes(List<IdCommandeArticle> commandes) {
 		this.commandes = commandes;
 	}
 

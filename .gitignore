@@ -38,3 +38,8 @@ SpringWeb/.classpath
 *.properties
 *.container
 .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.jsdt.web.core.prefs
+*.index
+*.snap
+*.resources
+*.prefs
+*.xmi
