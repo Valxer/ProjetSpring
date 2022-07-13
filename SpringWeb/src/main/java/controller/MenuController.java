@@ -29,12 +29,11 @@ public class MenuController {
 
 	@RequestMapping("/connexion")
 	public String connexion(Model model) {
-		model.addAttribute("client", new Client());
 		return "Connexion";
 	}
 
 	@PostMapping("/inscription")
-	public String create(@ModelAttribute(name = "client") Client client, Model model) {
+	public String create(@ModelAttribute(name = "newclient") Client client, Model model) {
 		this.clientRpository.save(client);
 		model.addAttribute("numID", client.getId());
 		return "ConfirmationInscription";

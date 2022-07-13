@@ -17,7 +17,6 @@
 	<mvc:annotation-driven validator="validator"></mvc:annotation-driven>
 
 	<context:component-scan base-package="controller, listener"></context:component-scan>
-	<bean id="contextStartedEventListener" class="listener.ContextStartedEventListener"/>
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

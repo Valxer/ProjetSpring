@@ -29,7 +29,7 @@
 	<hr>
 	<div class="w-75 d-flex flex-column align-items-center">
 		<h3>Première visite ? Inscrivez-vous:</h3>
-		<form action = "../menu/inscription" method="post" modelAttribute="client">
+		<form action = "../menu/inscription" method="post" modelAttribute="newclient">
 			<label for="nom">Nom</label>
 			<input name = "nom" type = "text" placeholder="Votre nom" required/><br><br>
 			
