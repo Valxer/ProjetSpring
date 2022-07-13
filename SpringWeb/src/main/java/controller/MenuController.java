@@ -53,7 +53,7 @@ public class MenuController {
 	public String con(@RequestParam(name = "identifiant") int id, @RequestParam(name = "mdp") String mdp,
 			HttpSession session) {
 		Optional<Client> c = clientRpository.findById(id);
-		if (c.get() != null) {
+		if (c.isPresent()) {
 			if (c.get().getPassword().equals(mdp)) {
 				session.setAttribute("client", c.get());
 				return "ConfirmationConnexion";
