@@ -33,7 +33,7 @@
 		</tbody>
 	</table>
 	<div class="d-flex justify-content-center">
-		<a class="btn btn-success" href="OrderCompleted" role="button">Finaliser la commande</a>
+		<a class="btn btn-success" href="ordercompleted" role="button">Finaliser la commande</a>
 	</div>
 	
 	<%@ include file="/footer.jsp" %>

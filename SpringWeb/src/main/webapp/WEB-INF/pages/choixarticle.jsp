@@ -19,19 +19,19 @@
 	</h3>
 	<div class="row justify-content-between">
 		<div id="menu sélection" class="col">
-			<p>Fais ton choix parmi nos plats de qualité:</p>
-			<form action="Ajout" method="post">
-				<select class="form-select" name="select" required>
+			<p>Fais ton choix parmi nos engins de siège artisanaux:</p>
+			<form:form method="post" modelAttribute="achat">
+				<select class="form-select" name="Idarticle" required>
 				  <option value="">Selectionne un article</option>
 				  <c:forEach var="article" items="${articles}">
-				  		<option value=<c:out value="${article.ref }" />><c:out value="${article.nom}" /></option>
+				  		<option value=<c:out value="${article.ref }" />><c:out value="${article.nom} ${article.prix } €" /></option>
 				  </c:forEach>
 				</select>
 				<div class="col-4">
 					Quantité :<input name="quantite" type="number" value="1">				
 				</div>
 				<button type="submit" class="btn btn-primary mt-4" value="ajouter">Ajouter</button>			
-			</form>
+			</form:form>
 		</div>
 		<div id="panier" class="col">
 		<table class="table table-striped">
@@ -55,16 +55,15 @@
 		</div>
 	</div>
 	<div class="d-flex justify-content-end">
-		<% 
-       	if (session.getAttribute("panier") != null){
-       		out.print("<a class='btn btn-success' href='Recap' role='button'>Valider le panier</a>");
-       		out.print("<a class='btn btn-danger' href='Reset' role='button'>Vider le panier</a>");
-       	} else {
-       		out.print("<a class='btn btn-secondary' href='Recap' role='button'>Panier vide</a>");
-       	}
-       
-       	%>
-		
+		<c:choose>
+			<c:when test="${panier == null}">
+			<a class='btn btn-secondary' href='../panier/commande' role='button'>Panier vide</a>
+			</c:when>
+			<c:otherwise>
+			<a class='btn btn-success' href='./recap' role='button'>Valider le panier</a>
+       		<a class='btn btn-danger' href='./reset' role='button'>Vider le panier</a>
+			</c:otherwise>
+		</c:choose>		
 	</div>
 </div>
 

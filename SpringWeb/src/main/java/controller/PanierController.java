@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import model.Achat;
+import model.Article;
 import model.Client;
 import model.Commande;
 import model.CommandeArticle;
@@ -43,8 +44,22 @@ public class PanierController {
 		}
 	}
 
+	@GetMapping("/reset")
+	public String reset(HttpSession session) {
+		if (session.getAttribute("client") == null) {
+			return "redirect:/menu/connexion";
+		} else {
+			session.setAttribute("panier", null);
+			session.setAttribute("totalp", null);
+			return "redirect:/panier/commande";
+		}
+	}
+
 	@PostMapping("/commande")
 	public String ajoutarticle(@ModelAttribute(name = "achat") Achat achat, HttpSession session) {
+		Article art = ArRepo.findById(achat.getIdarticle()).get();
+		achat.setNomart(art.getNom());
+		achat.setTotal(achat.getQuantite() * art.getPrix());
 		List<Achat> panier = new ArrayList<Achat>();
 		int totalp = 0;
 		if (session.getAttribute("totalp") != null)
@@ -90,7 +105,7 @@ public class PanierController {
 			session.setAttribute("p", c.getId());
 			for (Achat a : panier) {
 				this.CoArRepo.save(new CommandeArticle(
-						new IdCommandeArticle(c, ArRepo.findById(a.getIdarticle()).get()), a.getQuantite()));
+						new IdCommandeArticle(c, this.ArRepo.findById(a.getIdarticle()).get()), a.getQuantite()));
 			}
 			model.addAttribute("totalfinal", total);
 			session.setAttribute("totalp", null);

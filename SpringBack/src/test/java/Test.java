@@ -1,12 +1,16 @@
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import repository.ArticleRepository;
+
 public class Test {
 
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("./applicationContext.xml");
+		ArticleRepository artrepo = ctx.getBean(ArticleRepository.class);
 		// ClientRepository clrepo = ctx.getBean(ClientRepository.class);
 		// CommandeRepository corepo = ctx.getBean(CommandeRepository.class);
-		// ArticleRepository artrepo = ctx.getBean(ArticleRepository.class);
+		System.out.println(artrepo.findAll());
+
 		// CommandeArticleRepository coartrepo =
 		// ctx.getBean(CommandeArticleRepository.class);
 		// Article art = new Article("oui", "tres oui de ouf", 15, "truc.jpg");
