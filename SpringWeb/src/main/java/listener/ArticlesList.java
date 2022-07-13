@@ -1,11 +1,15 @@
 package listener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import model.Article;
 import repository.ArticleRepository;
 
 /**
@@ -14,9 +18,6 @@ import repository.ArticleRepository;
  */
 @WebListener
 public class ArticlesList implements ServletContextListener {
-
-	@Autowired
-	private ArticleRepository articleRepository;
 
 	/**
 	 * Default constructor.
@@ -36,8 +37,11 @@ public class ArticlesList implements ServletContextListener {
 	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
 	 */
 	public void contextInitialized(ServletContextEvent arg0) {
-		// List<Article> articles = articleRepository.findAll();
-		// arg0.getServletContext().setAttribute("articles", articles);
+		List<Article> articles = new ArrayList<Article>();
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("./applicationContext.xml");
+		ArticleRepository artrepo = ctx.getBean(ArticleRepository.class);
+		articles = artrepo.findAll();
+		arg0.getServletContext().setAttribute("articles", articles);
 	}
 
 }
