@@ -1,0 +1,36 @@
+127.0.0.1 - - [12/Jul/2022:16:19:01 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:19:13 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3959
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:19:13 +0200] "GET /SpringWeb/css/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:19:17 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3959
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:19:17 +0200] "GET /SpringWeb/css/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:22:24 +0200] "GET /SpringWeb/css/common_styles.css HTTP/1.1" 404 973
+127.0.0.1 - - [12/Jul/2022:16:32:21 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:32:30 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3977
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:32:30 +0200] "GET /SpringWeb/ressources/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:32:33 +0200] "GET /SpringWeb/ressources/common_styles.css HTTP/1.1" 404 973
+127.0.0.1 - - [12/Jul/2022:16:33:31 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:33:37 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3977
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:33:37 +0200] "GET /SpringWeb/ressources/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:33:41 +0200] "GET /SpringWeb/ressources/common_styles.css HTTP/1.1" 404 973
+127.0.0.1 - - [12/Jul/2022:16:34:29 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:34:31 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3981
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:34:32 +0200] "GET /SpringWeb/ressources/css/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:34:34 +0200] "GET /SpringWeb/ressources/css/common_styles.css HTTP/1.1" 404 973
+192.168.0.42 - - [12/Jul/2022:16:39:15 +0200] "GET / HTTP/1.1" 404 996
+192.168.0.42 - - [12/Jul/2022:16:39:19 +0200] "GET /HNAP1/ HTTP/1.1" 404 1002
+127.0.0.1 - - [12/Jul/2022:16:40:01 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:40:07 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3976
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:40:07 +0200] "GET /SpringWeb/resources/common_styles.css HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:40:10 +0200] "GET /SpringWeb/resources/common_styles.css HTTP/1.1" 404 973
+192.168.0.42 - - [12/Jul/2022:16:40:11 +0200] "-" 400 -
+192.168.0.42 - - [12/Jul/2022:16:40:11 +0200] "GET /requested.html HTTP/1.1" 404 1010
+192.168.0.42 - - [12/Jul/2022:16:40:25 +0200] "GET / HTTP/1.1" 404 996
+192.168.0.42 - - [12/Jul/2022:16:40:25 +0200] "GET /HNAP1/ HTTP/1.1" 404 1002
+127.0.0.1 - - [12/Jul/2022:16:40:56 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:40:59 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3976
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:40:59 +0200] "GET /SpringWeb/resources/common_styles.css HTTP/1.1" 200 1131
+192.168.0.42 - - [12/Jul/2022:16:41:18 +0200] "-" 400 -
+192.168.0.42 - - [12/Jul/2022:16:41:18 +0200] "GET /requested.html HTTP/1.1" 404 1010
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:43:35 +0200] "GET /connexion HTTP/1.1" 404 1005
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:43:38 +0200] "GET /SpringWeb/Accueil.jsp HTTP/1.1" 200 3976
+0:0:0:0:0:0:0:1 - - [12/Jul/2022:16:43:39 +0200] "GET /SpringWeb/Menu HTTP/1.1" 404 973
