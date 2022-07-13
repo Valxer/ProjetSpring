@@ -17,6 +17,7 @@ body {
 	justify-content: space-between;
 }
 a.nav-link{
+	width:200px;
 	color: white;
 }
 

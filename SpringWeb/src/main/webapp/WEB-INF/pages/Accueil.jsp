@@ -12,7 +12,7 @@
 <body>
 	<%@ include file="/header.jsp" %>
   
-  <h2>Accueil</h2>
+  <h2 class="my-4">Accueil</h2>
 <div class="container" style="height: 700px">
 	<div id="carouselExampleIndicators" class="carousel slide carousel-fade h-100" data-bs-ride="true">
 	  <div class="carousel-indicators">

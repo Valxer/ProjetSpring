@@ -10,37 +10,33 @@
 </head>
 <body>
 	<%@ include file="/header.jsp" %>
-  
-  <h2 class="text-center">Connexion/Inscription</h2>
-  <hr>
-  <section class="d-flex flex-column align-items-center">
+  <section class="d-flex ">
 	<div class="w-75 d-flex flex-column align-items-center">
 	 	<h3>Déjà client ? Connectez-vous:</h3>
-		<form action="../menu/connect" method="post">
-			<label for="identifiant">Identifiant</label>
-			<input name = "identifiant" type = "number" placeholder="00000000" required/><br><br>
+		<form action="../menu/connect" method="post" class="d-flex flex-column align-items-center">
+			<p class="mb-0"><label for="identifiant">Identifiant</label></p>
+			<input name = "identifiant" type = "number" placeholder="00000000" required/></br>
 		
-			<label for="mdp">Mot de passe</label>
-			<input name = "mdp" type = "password" required/><br><br>
+			<p class="mb-0"><label for="mdp">Mot de passe</label></p>
+			<input name = "mdp" type = "password" required/></br>
 		
 			<input type = "submit" value ="Se connecter" class="btn btn-primary" style="margin:0 auto;"/>
 		</form>  
 	</div>
-	<hr>
 	<div class="w-75 d-flex flex-column align-items-center">
 		<h3>Première visite ? Inscrivez-vous:</h3>
-		<form action = "../menu/inscription" method="post" modelAttribute="newclient">
-			<label for="nom">Nom</label>
-			<input name = "nom" type = "text" placeholder="Votre nom" required/><br><br>
+		<form action = "../menu/inscription" method="post" modelAttribute="newclient" class="d-flex flex-column align-items-center">
+			<p class="mb-0"><label for="nom">Nom</label></p>
+			<input name = "nom" type = "text" placeholder="Votre nom" required/><br>
 			
-			<label for="prenom">Prenom</label>
-			<input name = "prenom" type = "text" placeholder="Votre prenom" required/><br><br>
+			<p class="mb-0"><label for="prenom">Prenom</label></p>
+			<input name = "prenom" type = "text" placeholder="Votre prenom" required/><br>
 			
-			<label for="adresse">Adresse</label>
-			<input name = "adresse" type = "text" placeholder="Votre adresse" required/><br><br>
+			<p class="mb-0"><label for="adresse">Adresse</label></p>
+			<input name = "adresse" type = "text" placeholder="Votre adresse" required/><br>
 			
-			<label for="password">Mot de passe</label>
-			<input name = "password" type = "password" required/><br><br>
+			<p class="mb-0"><label for="password">Mot de passe</label></p>
+			<input name = "password" type = "password" required/><br>
 		
 			<input type = "submit" value ="S'inscrire" class="btn btn-primary"/>
 		</form>
