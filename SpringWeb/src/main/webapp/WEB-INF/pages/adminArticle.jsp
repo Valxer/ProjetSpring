@@ -20,6 +20,7 @@
 			    <th scope="col">description</th>
 			    <th scope="col">prix</th>
 			    <th scope="col">image</th>
+			    <th scope="col" class="col-2"/>
 			  </tr>
 			</thead>
 		<tbody>
@@ -30,35 +31,29 @@
 				<td><c:out value="${article.description }" /></td>
 				<td><c:out value="${article.prix }" /></td>
 				<td><c:out value="${article.image }" /></td>
+				<td >
+					<div class="d-flex justify-content-around align-items-center h-100">
+	                	<form:form action='./update' method="get" class="h-100">
+	                		<button type="submit" name="id" class="btn btn-primary " value =<c:out value="${article.ref}"/>> Update </button>
+	                	</form:form>
+	                	<form:form action='./remove' method="post" class="h-100">
+	                		<button type="submit" name="id" class="btn btn-danger " value =<c:out value="${article.ref}"/>> Remove </button>
+	                	</form:form>
+                	</div>
+                </td>
 			</tr>
 		</c:forEach>
 		</tbody>
 	</table>
 	</div>
-	<hr>
 	
-	<div class="container">
-	<h2>Editer un article</h2>
-	
-	<div id="menu sélection" class="col">
-		<form action="Edit" method="post">
-			<select class="form-select" name="select" required>
-			  <option value="">Selectionne un article</option>
-			  <c:forEach var="article" items="${articles}">
-			  		<option value=<c:out value="${article.ref }" />><c:out value="${article.nom}" /></option>
-			  </c:forEach>
-			</select>
-			<button type="submit" class="btn btn-primary mt-4" value="ajouter">Editer</button>			
-		</form>
-	</div>
-	</div>
 	<hr>
 	<div class="container">
 	<h2>Ajouter un article</h2>
 	<div class="w-75 d-flex flex-column align-items-center">
-		<form action = "Create">
-			<label for="ref">Ref :</label>
-			<input name = "ref" type = "text" required/><br><br>
+		<form:form action = "./create" method="post" modelAttribute="newart">
+<!-- 			<label for="ref">Ref :</label> -->
+<!-- 			<input name = "ref" type = "text" /><br><br> -->
 			
 			<label for="nom">Nom :</label>
 			<input name = "nom" type = "text" required/><br><br>
@@ -73,7 +68,7 @@
 			<input name = "image" type = "text" /><br><br>
 		
 			<input type = "submit" value ="Ajouter" class="btn btn-primary"/>
-		</form>
+		</form:form>
 	</div>
 	</div>
   

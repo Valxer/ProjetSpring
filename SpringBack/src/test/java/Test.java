@@ -1,5 +1,7 @@
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import model.Admin;
+import repository.AdminRepository;
 import repository.ArticleRepository;
 
 public class Test {
@@ -9,8 +11,12 @@ public class Test {
 		ArticleRepository artrepo = ctx.getBean(ArticleRepository.class);
 		// ClientRepository clrepo = ctx.getBean(ClientRepository.class);
 		// CommandeRepository corepo = ctx.getBean(CommandeRepository.class);
-		System.out.println(artrepo.findAll());
-
+		// System.out.println(artrepo.findAll());
+		AdminRepository adminrepo = ctx.getBean(AdminRepository.class);
+		Admin a = new Admin(1, "mdp", true);
+		Admin a2 = new Admin(2, "mdp", false);
+		adminrepo.save(a);
+		adminrepo.save(a2);
 		// CommandeArticleRepository coartrepo =
 		// ctx.getBean(CommandeArticleRepository.class);
 		// Article art = new Article("oui", "tres oui de ouf", 15, "truc.jpg");

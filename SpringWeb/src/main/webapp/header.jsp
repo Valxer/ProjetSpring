@@ -10,7 +10,15 @@
         <c:choose>
             <c:when test="${client == null}">
                 <li class='nav-item'> <a class='nav-link' href='../menu/connexion'>Connexion/Inscription</a> </li>
-				<!--admin-->
+				<c:choose>
+		            <c:when test="${admin == null}">
+		                <li class='nav-item'> <a class='nav-link' href='../admin/login'>Admin</a> </li>
+		            </c:when>
+		            <c:otherwise>
+		                <li class='nav-item'> <a class='nav-link' href='../admin/article'>Gestion articles</a> </li>
+		                <li class='nav-item'> <a class='nav-link' href='../admin/deconnexion'>Deconnexion Admin</a> </li>
+		            </c:otherwise>
+	        	</c:choose>
             </c:when>
             <c:otherwise>
                 <li class='nav-item'> <a class='nav-link' href='../panier/commande'>Commande</a> </li>

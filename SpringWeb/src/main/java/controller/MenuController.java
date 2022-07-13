@@ -44,11 +44,6 @@ public class MenuController {
 		return "Accueil";
 	}
 
-	@RequestMapping("/Admin")
-	public String admin() {
-		return "LoginAdmin";
-	}
-
 	@PostMapping("/connect")
 	public String con(@RequestParam(name = "identifiant") int id, @RequestParam(name = "mdp") String mdp,
 			HttpSession session) {
