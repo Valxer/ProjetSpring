@@ -11,11 +11,8 @@
 <body>
 	<%@ include file="/header.jsp" %>
 	
-	<%
-	
-	out.print("<h1 class='text-center'>Vous êtes maintenant inscrit, votre numéro id est: " + request.getAttribute("numId") + "</h1>");
-	
-	%>
+	<h1 class='text-center'>Vous êtes maintenant inscrit, votre numéro id est: ${numID} </h1>
+
 	
 	<%@ include file="/footer.jsp" %>
 </body>

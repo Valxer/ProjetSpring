@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 	<body>
-		<%@ include file="header.jsp" %>
+		<%@ include file="/header.jsp" %>
 	  
 	  <h2 class="text-center">Connexion administrateur</h2>
 	  <hr>
@@ -25,6 +25,6 @@
 				<input type = "submit" value ="Se connecter" class="btn btn-primary" style="margin:0 auto;"/>
 			</form>  
 		</div>
-		<%@ include file="footer.jsp" %>
+		<%@ include file="/footer.jsp" %>
 	</body>
 </html>

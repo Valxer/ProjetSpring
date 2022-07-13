@@ -9,14 +9,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="header.jsp" %>
+	<%@ include file="/header.jsp" %>
   
   <h2 class="text-center">Connexion/Inscription</h2>
   <hr>
   <section class="d-flex flex-column align-items-center">
 	<div class="w-75 d-flex flex-column align-items-center">
 	 	<h3>Déjà client ? Connectez-vous:</h3>
-		<form action="/clients/connexion">
+		<form action="../menu/connect" method="post">
 			<label for="identifiant">Identifiant</label>
 			<input name = "identifiant" type = "number" placeholder="00000000" required/><br><br>
 		
@@ -29,7 +29,7 @@
 	<hr>
 	<div class="w-75 d-flex flex-column align-items-center">
 		<h3>Première visite ? Inscrivez-vous:</h3>
-		<form action = "ServletInscription">
+		<form action = "../menu/inscription" method="post" modelAttribute="client">
 			<label for="nom">Nom</label>
 			<input name = "nom" type = "text" placeholder="Votre nom" required/><br><br>
 			
@@ -39,14 +39,14 @@
 			<label for="adresse">Adresse</label>
 			<input name = "adresse" type = "text" placeholder="Votre adresse" required/><br><br>
 			
-			<label for="mdp">Mot de passe</label>
-			<input name = "mdp" type = "password" required/><br><br>
+			<label for="password">Mot de passe</label>
+			<input name = "password" type = "password" required/><br><br>
 		
 			<input type = "submit" value ="S'inscrire" class="btn btn-primary"/>
 		</form>
 	</div>
   </section>
 	
-	<%@ include file="footer.jsp" %>
+	<%@ include file="/footer.jsp" %>
 </body>
 </html>

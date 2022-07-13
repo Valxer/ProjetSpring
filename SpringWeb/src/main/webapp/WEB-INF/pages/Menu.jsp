@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="header.jsp" %>
+	<%@ include file="/header.jsp" %>
   
 	<h2 class="text-center">Menu</h2>
 	<section class="menu-container d-flex flex-wrap justify-content-around">
@@ -31,6 +31,6 @@
 		}
 	</script>
   
-	<%@ include file="footer.jsp" %>
+	<%@ include file="/footer.jsp" %>
 </body>
 </html>
