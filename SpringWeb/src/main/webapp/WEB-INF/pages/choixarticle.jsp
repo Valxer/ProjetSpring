@@ -60,7 +60,7 @@
 			<a class='btn btn-secondary' href='../panier/commande' role='button'>Panier vide</a>
 			</c:when>
 			<c:otherwise>
-			<a class='btn btn-success' href='./recap' role='button'>Valider le panier</a>
+			<a class='btn btn-success me-4' href='./recap' role='button'>Valider le panier</a>
        		<a class='btn btn-danger' href='./reset' role='button'>Vider le panier</a>
 			</c:otherwise>
 		</c:choose>		
