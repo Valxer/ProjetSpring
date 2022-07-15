@@ -50,22 +50,20 @@
 	<hr>
 	<div class="container">
 	<h2>Ajouter un article</h2>
-	<div class="w-75 d-flex flex-column align-items-center">
-		<form:form action = "./create" method="post" modelAttribute="newart">
-<!-- 			<label for="ref">Ref :</label> -->
-<!-- 			<input name = "ref" type = "text" /><br><br> -->
+	<div class="d-flex flex-column align-items-center">
+		<form:form action = "./create" method="post" modelAttribute="newart" class="d-flex flex-column align-items-center">
 			
-			<label for="nom">Nom :</label>
-			<input name = "nom" type = "text" required/><br><br>
+			<p class="mb-0"><label for="nom">Nom :</label></p>
+			<input name = "nom" type = "text" required/><br>
 			
-			<label for="description">Descritpion :</label>
-			<input name = "description" type = "text" /><br><br>
+			<p class="mb-0"><label for="description">Descritpion :</label></p>
+			<input name = "description" type = "text" /><br>
 			
-			<label for="prix">Prix :</label>
-			<input name = "prix" type = "number" required/><br><br>
+			<p class="mb-0"><label for="prix">Prix :</label></p>
+			<input name = "prix" type = "number" required/><br>
 			
-			<label for="image">URL de l'image :</label>
-			<input name = "image" type = "text" /><br><br>
+			<p class="mb-0"><label for="image">URL de l'image :</label></p>
+			<input name = "image" type = "text" /><br>
 		
 			<input type = "submit" value ="Ajouter" class="btn btn-primary"/>
 		</form:form>

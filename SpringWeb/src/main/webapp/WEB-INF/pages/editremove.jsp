@@ -10,21 +10,21 @@
 </head>
 <body>
 	<%@ include file="/header.jsp" %>
-	<form:form action = "../admin/update" method="post" class="mt-4" modelAttribute="art">
-			<label for="idref">Référence :</label>
-			<form:input path = "ref" id="idref" readonly="true" /><br><br>
+	<form:form action = "../admin/update" method="post" class="mt-4 d-flex flex-column align-items-center" modelAttribute="art" >
+			<p class="mb-0"><label for="idref">Référence :</label></p>
+			<form:input class="col-3" path = "ref" id="idref" readonly="true" /><br>
 			
-			<label for="idnom">Nom :</label>
-			<form:input path = "nom" id="idnom" required="required"/><br><br>
+			<p class="mb-0"><label for="idnom">Nom :</label></p>
+			<form:input class="col-3" path = "nom" id="idnom" required="required"/><br>
 			
-			<label for="iddesc">Description :</label>
-			<form:input path = "description" id="iddesc" required="required"/><br><br>
+			<p class="mb-0"><label for="iddesc">Description :</label></p>
+			<form:textarea class="col-3" path = "description" id="iddesc" required="required"/><br>
 			
-			<label for="idprix">Prix :</label>
-			<form:input path = "prix" id="idprix" required="required"/><br><br>
+			<p class="mb-0"><label for="idprix">Prix :</label></p>
+			<form:input class="col-3" path = "prix" id="idprix" required="required"/><br>
 			
-			<label for="idimg">URL Image :</label>
-			<form:input path = "image" id="idimg" required="required"/><br><br>
+			<p class="mb-0"><label for="idimg">URL Image :</label></p>
+			<form:input class="col-3" path = "image" id="idimg" required="required"/><br>
 			<form:hidden path="version" />
 		
 			<input type = "submit" value ="Modifier article" class="btn btn-primary"/>

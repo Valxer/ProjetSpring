@@ -11,16 +11,14 @@
 	<body>
 		<%@ include file="/header.jsp" %>
 	  
-	  <h2 class="text-center">Connexion administrateur</h2>
-	  <hr>
-		<div class="w-75 d-flex flex-column align-items-center">
+		<div class="d-flex flex-column align-items-center">
 		 	<h3>Entrez vos identifiants administrateur:</h3>
-			<form action = "../admin/connect" method="post">
-				<label for="identifiant">Identifiant</label>
-				<input name = "identifiant" type = "number" placeholder="00000000" required/><br><br>
+			<form action = "../admin/connect" method="post" class="d-flex flex-column align-items-center">
+				<p class="mb-0"><label for="identifiant">Identifiant</label></p>
+				<input name = "identifiant" type = "number" placeholder="00000000" required/><br>
 			
-				<label for="mdp">Mot de passe</label>
-				<input name = "mdp" type = "password" required/><br><br>
+				<p class="mb-0"><label for="mdp">Mot de passe</label></p>
+				<input name = "mdp" type = "password" required/><br>
 			
 				<input type = "submit" value ="Se connecter" class="btn btn-primary" style="margin:0 auto;"/>
 			</form>  
