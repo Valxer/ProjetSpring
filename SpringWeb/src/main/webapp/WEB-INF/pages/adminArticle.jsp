@@ -11,7 +11,7 @@
 <body>
 	<%@ include file="/header.jsp" %>
   	<div class="container">
-	<h2 class="text-center">Menu</h2>
+	<h2 class="text-center my-4">Catalogue</h2>
 	<table class="table table-striped table-primary">
 		<thead class="table-dark">
 			<tr>
@@ -48,27 +48,35 @@
 	</div>
 	
 	<hr>
-	<div class="container">
-	<h2>Ajouter un article</h2>
-	<div class="d-flex flex-column align-items-center">
-		<form:form action = "./create" method="post" modelAttribute="newart" class="d-flex flex-column align-items-center">
+	<div class="container d-flex flex-column align-items-center" onclick="myFunction(this)">
+		<h2 class="btn btn-primary addbtn">Ajouter un article</h2>
+		<div class=" flex-column align-items-center addform" style="display:none;">
+			<form:form action = "./create" method="post" modelAttribute="newart" class="d-flex flex-column align-items-center">
+				
+				<p class="mb-0"><label for="nom">Nom :</label></p>
+				<input name = "nom" type = "text" required/><br>
+				
+				<p class="mb-0"><label for="description">Descritpion :</label></p>
+				<input name = "description" type = "text" /><br>
+				
+				<p class="mb-0"><label for="prix">Prix :</label></p>
+				<input name = "prix" type = "number" required/><br>
+				
+				<p class="mb-0"><label for="image">URL de l'image :</label></p>
+				<input name = "image" type = "text" /><br>
 			
-			<p class="mb-0"><label for="nom">Nom :</label></p>
-			<input name = "nom" type = "text" required/><br>
-			
-			<p class="mb-0"><label for="description">Descritpion :</label></p>
-			<input name = "description" type = "text" /><br>
-			
-			<p class="mb-0"><label for="prix">Prix :</label></p>
-			<input name = "prix" type = "number" required/><br>
-			
-			<p class="mb-0"><label for="image">URL de l'image :</label></p>
-			<input name = "image" type = "text" /><br>
-		
-			<input type = "submit" value ="Ajouter" class="btn btn-primary"/>
-		</form:form>
+				<input type = "submit" value ="Ajouter" class="btn btn-primary"/>
+			</form:form>
+		</div>
 	</div>
-	</div>
+	<script>
+		function myFunction(target) {
+			if (target.querySelector(".addform").style.display == "none"){
+		 		target.querySelector(".addform").style.display = "flex"
+		 		target.querySelector(".addbtn").style.display = "none"
+			}
+		}
+	</script>
   
 	<%@ include file="/footer.jsp" %>
 </body>
