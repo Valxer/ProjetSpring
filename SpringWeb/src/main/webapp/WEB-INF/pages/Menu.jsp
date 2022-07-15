@@ -14,11 +14,11 @@
 	<h2 class="text-center my-4">Catalogue</h2>
 	<section class="menu-container d-flex flex-wrap justify-content-around">
 		<c:forEach var="article" items="${articles}">
-			<div style="width: 350px; margin: 30px 15px;" class="articlecard text-center" onclick="myFunction(this)">
-				<img style="object-fit:cover;" src=<c:out value="${article.image}"/> alt="Girl in a jacket" width="250" height="250">
+			<div style="width: 350px; margin: 30px 15px;" class="bg-secondary bg-opacity-25 articlecard card align-items-center text-center" onclick="myFunction(this)">
+				<img class="my-4 rounded-4" style="object-fit:cover;" src=<c:out value="${article.image}"/> alt="Girl in a jacket" width="250" height="250">
 				<h3><c:out value="${article.nom}"/></h3>
 				<p class="desc" style="display:none;"><c:out value="${article.description}"/></p>
-				<h3><c:out value="${article.prix} €"/></h3>				
+				<h3 class="mb-4"><c:out value="${article.prix} €"/></h3>				
 			</div>
 		</c:forEach>
 	</section>
