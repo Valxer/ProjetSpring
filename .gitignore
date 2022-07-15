@@ -44,3 +44,5 @@ SpringWeb/.classpath
 *.prefs
 *.xmi
 *.snap
+*.properties
+*.properties
